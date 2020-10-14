@@ -1,0 +1,89 @@
+{% extends ('gabarit.html.twig') %}
+
+{%  block meta %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176748190-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-176748190-1');
+    </script>
+
+    <!--Meta-->
+    <meta name="description" content="Consultez plus de détail concernant la recommandation.">
+
+{% endblock %}
+
+{% block main %}
+    <!--Titre page-->
+    <h2>Détail de la recommandation</h2>
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap pad">
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 margebas pad">
+            <div class="tuilebb">
+                <p>{{ recommandation.nom }} {{ recommandation.prenom }} - ({{ recommandation.categorieRecommandation.nom }}) - {{ recommandation.dateCreation|date('d/m/Y') }}</p>
+            </div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pad">
+            <!--Bloc citation-->
+            <div class="tuiled">
+                <div>
+                    <p class="tailletitrereal">{{ recommandation.titre }}</p>
+                    <img src="{{ asset('img/quotesouvrantesb.png')}}" height="50" width="70" alt="Quotes" class="quoto">
+                    <p>{{ recommandation.description }}</p>
+                    <div class="alignedroite">
+                        <img src="{{ asset('img/quotesfermantesb.png')}}" height="50" width="70" alt="Quotes" class="quote">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Retour-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <a href="{{ path ('recommandation_liste_date_recent') }}" ><button type="button" class="deroule grandemargebas">Retour aux recommandations</button></a>
+        </div>
+
+        <!--Remonte page-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <button type="button" id="remontepage" class="deroule">Remonter en haut de la page</button>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block title %}Guillaume GEORGES - Développeur Web | Portfolio - Détail de la recommandation{% endblock %}

@@ -1,0 +1,115 @@
+{% extends ('gabarit.html.twig') %}
+
+{%  block meta %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176748190-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-176748190-1');
+    </script>
+
+    <!--Meta-->
+    <meta name="description" content="Triez et visualisez l'ensemble des recommandations.">
+
+{% endblock %}
+
+{% block main %}
+
+    <!--TItre page-->
+    <h2>Liste des recommandations</h2>
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap pad">
+        <!--Bouton de tri-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+            <button type="button" class="deroule">Trier par</button>
+            <div class="deroulecontenu">
+                <div class="d-flex ">
+                    <div ><a href="{{ path ('recommandation_liste_date_recent') }}"><button class="btn-info boutontrier grossit">Date (plus récent)</button></a></div>
+                    <div><a href="{{ path ('recommandation_liste_date_vieux') }}"><button class="btn-info boutontrier grossit">Date (plus vieux)</button></a></div>
+                    <div><a href="{{ path ('recommandation_liste_nomasc') }}"><button class="btn-success boutontrier grossit">Auteur (A -> Z)</button></a></div>
+                    <div><a href="{{ path ('recommandation_liste_nomdesc') }}"><button class="btn-success boutontrier grossit">Auteur (Z -> A)</button></a></div>
+                    <div><a href="{{ path ('recommandation_liste_note_meilleure') }}"><button class="btn-warning boutontrier grossit">Note (+ au -)</button></a></div>
+                    <div><a href="{{ path ('recommandation_liste_note_moinsbonne') }}"><button class="btn-warning boutontrier grossit">Note (- au +)</button></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+
+        <!--Boucle sur toutes les recommandations pour les afficher-->
+        {% for recommandation in recommandations %}
+            <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+                <!--Visible-->
+                <button type="button" class="collapsible">
+                    <img src="{{ asset('img/quotesouvrantesb.png')}}" height="50" width="70" alt="Quotes">
+                    <p class="tailletitrerealgauche">{{ recommandation.nom }} {{ recommandation.prenom }} - {{ recommandation.titre }} - {{ recommandation.dateCreation|date('d/m/Y') }} ({{ recommandation.categorieRecommandation.nom }})</p>
+                    <div class="alignedroite">
+                        <img src="{{ asset('img/quotesfermantesb.png')}}" height="50" width="70" alt="Quotes" class="quote">
+                    </div>
+                </button>
+                <!--Contenu caché-->
+                <div class="contenta">
+                    <img src="{{ asset('img/quotesouvrantesb.png')}}" height="50" width="70" alt="Quotes" class="quotehaut">
+                    <p>{{ recommandation.description }}</p>
+                    <div class="alignedroite">
+                        <img src="{{ asset('img/quotesfermantesb.png')}}" height="50" width="70" alt="Quotes" class="quote">
+                    </div>
+                    <a href="{{ path('recommandation_detail', {'id' : recommandation.id}) }}"><button type="button" class="deroule deroulepetit">Voir en page complète</button></a>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+
+        <!--Si connecté alors affichage bouton ajout sinon affichage connexion ou inscription-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <a href="{{ path ('recommandation_ajouter')}}"><button class="deroule center">Ajouter recommandation</button></a>
+            {% else %}
+                <p class="alignegauche">Vous devez être <a href="{{ path('recommandation_ajouter')}}">Connecté</a> ou <a href="{{ path('inscription')}}">Inscris</a> puis connecté pour ajouter votre recommandation!</p>
+            {% endif %}
+        </div>
+
+        <!--Remonte page-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <button type="button" id="remontepage" class="deroule">Remonter en haut de la page</button>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block title %}Guillaume GEORGES - Développeur Web | Portfolio - Mes recommandations{% endblock %}

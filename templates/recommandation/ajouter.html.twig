@@ -1,0 +1,96 @@
+{% extends 'gabarit.html.twig' %}
+
+{%  block meta %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176748190-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-176748190-1');
+    </script>
+
+    <!--Meta-->
+    <meta name="description" content="Ajoutez votre recommandation via le formulaire.">
+
+{% endblock %}
+
+{% block main %}
+    <!--Titre page-->
+    <h2>Ajoutez une recommandation</h2>
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap pad" >
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pad">
+            <div class="tuilec plushaut">
+                <p class="tailletitrereal grandemargebas">Formulaire d'ajout de recommandation</p>
+                <div class="tuileb">
+                    <!--Formulaire d'ajout de recommandation avec les différents champs-->
+                    <div class="connexion margeauto col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        {{ form_start(recommandationForm, {'attr': {'novalidate': 'novalidate'}}) }}
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/profil.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(recommandationForm.nom) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/profil.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(recommandationForm.prenom) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/pointinterb.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(recommandationForm.titre) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/etoile.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(recommandationForm.categorieRecommandation) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/pointssuspension.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(recommandationForm.description) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex annuldflex decboutongau col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class=" col-6 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><button class="valider" type="submit">Ajouter</button></div>
+                            <div class="col-6 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><button class="effacer" type="reset">Effacer</button></div>
+                        </div>
+                    </div>
+                    {{ form_end(recommandationForm) }}
+                </div>
+
+                <!--Affichage des erreurs-->
+                <div class="erreurform">
+                    {{ form_errors(recommandationForm.nom) }}
+                    {{ form_errors(recommandationForm.prenom) }}
+                    {{ form_errors(recommandationForm.titre) }}
+                    {{ form_errors(recommandationForm.categorieRecommandation) }}
+                    {{ form_errors(recommandationForm.description) }}
+                </div>
+            </div>
+        </div>
+
+        <!--Remonte page-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <button type="button" id="remontepage" class="deroule">Remonter en haut de la page</button>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block title %}Guillaume GEORGES - Développeur Web | Portfolio - Ajouter une recommandation{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'gabarit.html.twig' %}
+
+{% block main %}
+    <!--Titre page-->
+    <h2>Oups, erreur 404!</h2>
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap pad">
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pad">
+            <div class="tuiled">
+                <div class="center">
+                    <img src="{{ asset('img/404.png')}}" height="220" width="274" alt="404">
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pad">
+            <div class="tuiled">
+                <div>
+                    <p>La page demandée est introuvable ou n'existe pas!</p>
+                    <br>
+                    <p>Pour continuer de naviguer sur le site, vous pouvez sélectionner un autre choix dans le menu ou :</p>
+                    <a href="{{ path('accueil') }}"><button type="button" class="deroule deroulepetit">Retourner sur la page d'accueil</button></a>
+                </div>
+            </div>
+        </div>
+
+        <!--Remonte page-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <button type="button" id="remontepage" class="deroule">Remonter en haut de la page</button>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,161 @@
+{% extends ('gabarit.html.twig') %}
+
+{%  block meta %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176748190-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-176748190-1');
+    </script>
+
+    <!--Meta-->
+    <meta name="description" content="Triez et visualisez l'ensemble de mes réalisations.">
+{% endblock %}
+
+{% block main %}
+    <!--Titre page-->
+    <h2>Liste des réalisations</h2>
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap pad">
+        <!--Bouton de tri-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+            <button type="button" class="deroule">Trier par</button>
+            <div class="deroulecontenu">
+                <div class="d-flex bg-bleu">
+                    <div><a href="{{ path ('realisation_liste_date_creadesc') }}"><button class="btn-info boutontrier grossit">Projet récent</button></a></div>
+                    <div><a href="{{ path ('realisation_liste_date_creaasc') }}"><button class="btn-info boutontrier grossit">Projet ancien</button></a></div>
+                    <div><a href="{{ path ('realisation_liste_nomasc') }}"><button class="btn-success boutontrier grossit">Projet seul</button></a></div>
+                    <div><a href="{{ path ('realisation_liste_nomdesc') }}"><button class="btn-success boutontrier grossit">Projet encadré</button></a></div>
+                    <div><a href="{{ path ('realisation_liste_date_recent') }}"><button class="btn-warning boutontrier grossit">Ajout récent</button></a></div>
+                    <div><a href="{{ path ('realisation_liste_date_vieux') }}"><button class="btn-warning boutontrier grossit">Ajout ancien</button></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+
+        <!--Boucle sur toutes les réalisations pour les afficher-->
+        {% for realisation in realisations %}
+            <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+                <!--Visible-->
+                <button type="button" class="collapsible">
+                    <p class="tailletitrerealhaut titrehaut">{{ realisation.titre }} - {{ realisation.dateProjet|date('d/m/Y') }} - ({{ realisation.categorieRealisation.nom }})</p>
+                    <div class="imgcenter redimage">
+                        <img src="{{ asset('img/realisations/' ~ realisation.imagerendu)}}" height="148" width="274" alt="Miniature du projet : {{ realisation.titre }}">
+                    </div>
+                </button>
+                <!--Contenu caché-->
+                <div class="contenta">
+                    <p>
+                    <p class="padding-bottom">{{ realisation.resume }}</p>
+                    <!--Vérification des langages puis affichage-->
+                    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex margegauche releve">
+                        <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                            {% if realisation.imagelangage1 is not null %}
+                                <img src="{{ asset('img/realisations/' ~ realisation.imagelangage1)}}" height="52" width="52" alt="Icone" class="imglangage">
+                            {% endif %}
+                        </div>
+                        <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                            {% if realisation.imagelangage2 is not null %}
+                                <img src="{{ asset('img/realisations/' ~ realisation.imagelangage2)}}" height="52" width="52" alt="Icone" class="imglangage">
+                            {% endif %}
+                        </div>
+                        <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                            {% if realisation.imagelangage3 is not null %}
+                                <img src="{{ asset('img/realisations/' ~ realisation.imagelangage3)}}" height="52" width="52" alt="Icone" class="imglangage">
+                            {% endif %}
+                        </div>
+                        <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                            {% if realisation.imagelangage4 is not null %}
+                                <img src="{{ asset('img/realisations/' ~ realisation.imagelangage4)}}" height="52" width="52" alt="Icone" class="imglangage">
+                            {% endif %}
+                        </div>
+                        <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                            {% if realisation.imagelangage5 is not null %}
+                                <img src="{{ asset('img/realisations/' ~ realisation.imagelangage5)}}" height="52" width="52" alt="Icone" class="imglangage">
+                            {% endif %}
+                        </div>
+                        <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                            {% if realisation.imagelangage6 is not null %}
+                                <img src="{{ asset('img/realisations/' ~ realisation.imagelangage6)}}" height="52" width="52" alt="Icone" class="imglangage">
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex margegauche">
+                        <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                            {% if realisation.imagelangage7 is not null %}
+                                <img src="{{ asset('img/realisations/' ~ realisation.imagelangage7)}}" height="52" width="52" alt="Icone" class="imglangage">
+                            {% endif %}
+                        </div>
+                        <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                            {% if realisation.imagelangage8 is not null %}
+                                <img src="{{ asset('img/realisations/' ~ realisation.imagelangage8)}}" height="52" width="52" alt="Icone" class="imglangage">
+                            {% endif %}
+                        </div>
+                        <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                            {% if realisation.imagelangage9 is not null %}
+                                <img src="{{ asset('img/realisations/' ~ realisation.imagelangage9)}}" height="52" width="52" alt="Icone" class="imglangage">
+                            {% endif %}
+                        </div>
+                        <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                            {% if realisation.imagelangage10 is not null %}
+                                <img src="{{ asset('img/realisations/' ~ realisation.imagelangage10)}}" height="52" width="52" alt="Icone" class="imglangage">
+                            {% endif %}
+                        </div>
+                    </div>
+                    <a href="{{ path('realisation_detail', {'id' : realisation.id}) }}"><button type="button" class="deroule deroulepetit">Plus de détails sur ce projet</button></a>
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+        <!--Si admin alors affichage bouton ajout-->
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path ('realisation_ajouter')}}"><button class="deroule center grandemargebas">Ajouter réalisation</button></a>
+            {% endif %}
+        </div>
+
+        <!--Remonte page-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <button type="button" id="remontepage" class="deroule">Remonter en haut de la page</button>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block title %}Guillaume GEORGES - Développeur Web | Portfolio - Mes réalisations{% endblock %}

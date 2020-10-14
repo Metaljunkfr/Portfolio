@@ -1,0 +1,93 @@
+{% extends 'gabarit.html.twig'%}
+
+{%  block meta %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176748190-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-176748190-1');
+    </script>
+
+    <!--Meta-->
+    <meta name="description" content="Connectez-vous via le formulaire si vous avez déjà un compte.">
+
+{% endblock %}
+
+{% block main %}
+    <!--Titre page-->
+    <h2>Connexion</h2>
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap pad" >
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pad">
+            <div class="tuilec plushaut divconnex">
+                <!--Formulaire de connexion avec les différents champs-->
+                <p class="tailletitrereal">Formulaire de connexion</p>
+                <div class="tuileb">
+                    <div class="connexion margeauto col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <form action="{{ path('connexion') }}" method="post">
+                            <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/profil.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                                <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform"><input type="text" name="_username" id="pseudo" value="{{ dernierPseudo }}" placeholder="Pseudo" required="true"></div>
+                                <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                            </div>
+                            <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/mailb.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                                <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform"><input type="email" name="_email" id="email" placeholder="Email" required="true"></div>
+                                <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                            </div>
+                            <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/motdepasseb.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                                <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform"><input type="password" name="_password" id="motdepasse" placeholder="Mot de passe" required="true"></div>
+                                <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                            </div>
+                            <div class="group d-flex custom-control custom-checkbox col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"></div>
+                                <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">
+                                    <input type="checkbox" class="custom-control-input" id="remember_me" name="_remember_me" unchecked/>
+                                    <label class="labelform custom-control-label" for="remember_me">Se souvenir de moi </label>
+                                </div>
+                                <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                            </div>
+                            <div class="group d-flex annuldflex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class=" col-12 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><button class="valider" type="submit">Connexion</button></div>
+                                <div class=" col-12 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><button class="effacer" type="reset">Effacer</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--Affichage des erreurs-->
+            <div class="erreurform">
+                {% if erreur %}
+                    <div><ul><li>{{ erreur.messageKey|trans(erreur.messageData, 'security') }}</li></ul></div>
+                {% endif %}
+            </div>
+        </div>
+        <!--Si pas de compte alors lien vers inscription-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 grandemargebas pad">
+            <p>Si vous n'avez pas encore de compte, cliquez <a href="{{ path('inscription')}}" class="lien">ici</a> pour en créer un.</p>
+        </div>
+        <!--Remonte page-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <button type="button" id="remontepage" class="deroule">Remonter en haut de la page</button>
+        </div>
+    </div>
+{%  endblock %}
+
+{% block title %}Guillaume GEORGES - Développeur Web | Portfolio - Connexion{% endblock %}

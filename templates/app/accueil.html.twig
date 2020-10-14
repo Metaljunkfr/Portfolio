@@ -1,0 +1,318 @@
+{%  extends 'gabarit.html.twig' %}
+
+{%  block meta %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176748190-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176748190-1');
+    </script>
+    <!-- Meta et schéma -->
+    <meta name="description" content="Guillaume Georges : développeur web/mobile junior back-end, front-end et bases de données. Conception et réalisation de sites web.">
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Person",
+            "familyName": "Georges",
+            "givenName": "Guillaume",
+            "worksFor": "https://www.guillaumegeorges.fr",
+            "image": "https://www.guillaumegeorges.fr/img/gg.jpg",
+            "gender": "http://schema.org/Male",
+            "sameAs": ["http://linkedin.com/in/guillaumegeorges","https://gitlab.com/Metaljunk"]
+        }
+    </script>
+{% endblock %}
+
+{% block main %}
+    <!-- Titre page -->
+    <h2>Concepteur Développeur d'Applications</h2>
+    <h2>Je recherche une entreprise en alternance (Bac +3/4)</h2>
+
+    <!-- Bloc tuiles et contenu -->
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap pad">
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 margebas pad">
+            <a href="{{ path("contact") }}" class="lien"><button type="button" class="deroule font11 margebas">M'inviter à rejoindre votre équipe</button></a>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+
+        <!-- Tuile 1 -->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+            <!--Visible -->
+            <button type="button" class="collapsible">
+                <div class="d-flex annuldflexdeb">
+                    <div class="annuldflexdeb d-flex">
+                        <div>
+                            <img src="{{ asset("img/quisuisje.png") }}" height="100" width="100" alt="Qui-suis-je?" class="tourne">
+                        </div>
+                        <div>
+                            <h3>Qui suis-je?</h3>
+                            <h3><img src="{{ asset("img/fleche2.png") }}" height="20" width="25" alt="Flèche"></h3>
+                        </div>
+                    </div>
+                </div>
+            </button>
+            <!-- Contenu caché -->
+            <div class="contenta">
+                <p>Bienvenue sur mon portfolio, je suis Guillaume GEORGES, en reconversion professionnelle j'ai réalisé une formation Titre Professsionnel Développeur Web et Web Mobile (Bac +2) à l'ENI École Informatique qui a débuté en Octobre 2019.</p>
+                <p>J'ai effectué un stage de fin de formation d'une durée de huit semaines. Durant ce stage j'ai conçu et réalisé une landing page pour un réseau social dans le domaine de l'eSport. Pour en savoir plus cliquez <a href="{{ path("realisation_liste_date_creadesc") }}" class="lien">ici</a>.</p>
+                <p>Suite à ce stage j'ai réalisé un rapport, préparé des slides Powerpoint, et ai passé une soutenance qui m'a permis d'obtenir le Titre, certifié au RNCP (niveau 5, anciennement niveau III).</p>
+                <p>Je recherche une entreprise pour une alternance, tout type de langage, tant en Front-End qu'en Back-End. J'ai cependant une préférence pour le framework Symfony en PHP que je trouve très abouti. La formation est très axée dessus.</p>
+                <p>Voici un bref aperçu des langages, frameworks ou technologies que j'utilise : PHP, Symfony 5, Git, jQuery, Java SE/EE, Tomcat, Angular, JavaScript, HTML, CSS/SCSS, Bootstrap, Microsoft SQL Server, MySQL, PL/SQL. D'autres langages utilisés sont disponibles sur mon <a href="{{ path ('curriculumvitae')}}">Curriculum Vitae</a>.</p>
+                <p>De plus, je pense à vos yeux, je pense à mes yeux avec ce thème "sombre", et les couleurs me correspondent plutôt bien!</p>
+                <p>Pour m'inviter à rejoindre votre équipe, ou pour toute autre demande, cliquez <a href="{{ path("contact") }}" class="lien">ici</a>.</p>
+            </div>
+        </div>
+
+        <!-- Tuile 2 -->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+
+            <!--Visible -->
+            <button type="button" class="collapsible">
+                <div class="d-flex annuldflexdeb">
+                    <div class="annuldflexdeb d-flex">
+                        <div>
+                            <img src="{{ asset("img/quiarealisecesite.png") }}" height="100" width="100" class="tourne" alt="Qui a réalisé ce site?">
+                        </div>
+                        <div>
+                            <h3>Qui a réalisé ce site?</h3>
+                            <h3><img src="{{ asset("img/fleche2.png") }}" height="20" width="25" alt="Flèche"></h3>
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Contenu caché -->
+            <div class="contenta">
+                <p>Ce portfolio a été réalisé entièrement par mes soins, tant la partie Front que Back, la partie gestion de base de données également, cependant avec Symfony cela fonctionne par entité ORM et les scripts sont automatisés. Vous trouverez plus de détails, notamment un aperçu de ma façon de procéder avec mes étapes de développement de mes projets dans l'onglet <a href="{{ path ("realisation_liste_date_creadesc") }}" class="lien">réalisations</a>.</p>
+            </div>
+        </div>
+
+        <!-- Tuile 3 -->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+
+            <!--Visible -->
+            <button type="button" class="collapsible">
+                <div class="d-flex annuldflexdeb">
+                    <div class="annuldflexdeb d-flex">
+                        <div>
+                            <img src="{{ asset("img/professionnellement.png") }}" height="100" width="100" class="tourne" alt="Professionnellement?">
+                        </div>
+                        <div>
+                            <h3>Professionnellement?</h3>
+                            <h3><img src="{{ asset("img/fleche2.png") }}" height="20" width="25" alt="Flèche"></h3>
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Contenu caché -->
+            <div class="contenta">
+                <p>Ayant connu différents domaines professionnels (manutention, bâtiment, vente, animation) je possède un certain savoir être et savoir vivre, ainsi qu'une connaissance sur le respect d'impératifs liés à tout type d'entreprise. Je suis consciencieux et fais toujours du mieux que je peux.</p>
+            </div>
+        </div>
+
+        <!-- Tuile 4 -->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+
+            <!--Visible -->
+            <button type="button" class="collapsible">
+                <div class="d-flex annuldflexdeb">
+                    <div class="annuldflexdeb d-flex">
+                        <div>
+                            <img src="{{ asset("img/realisations.png") }}" height="100" width="100" class="tourne" alt="Réalisations">
+                        </div>
+                        <div>
+                            <h3>Mes derniers projets?</h3>
+                            <h3><img src="{{ asset("img/fleche2.png") }}" height="20" width="25" alt="Flèche"></h3>
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Contenu caché -->
+            <div class="contenta">
+                <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap">
+
+                    <!-- Boucle sur les réalisations pour afficher les 3 dernières seulement -->
+                    {% for realisation in realisations %}
+                        {% if loop.index <= 3 %}
+                            <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 grandemargebas grandemargehaut pad">
+
+                                <!--Visible -->
+                                <button type="button" class="collapsible redu">
+                                    <!-- Affichage de certaines infos -->
+                                    <p class="tailletitrerealhaut titreaccueilreal">{{ realisation.titre }} - {{ realisation.dateProjet|date('d/m/Y') }} - ({{ realisation.categorieRealisation.nom }})</p>
+                                    <div class="imgcenter reduitimage">
+                                        <img src="{{ asset('img/realisations/' ~ realisation.imagerendu)}}" height="148" width="274" alt="Miniature du projet : {{ realisation.titre }}">
+                                    </div>
+                                </button>
+
+                                <!-- Contenu caché -->
+                                <div class="contenta redu decgau">
+                                    <p>
+                                    <!-- Vérification si les langages ont été renseigné puis les afficher-->
+                                        <p class="padding-bottom">{{ realisation.resume }}</p>
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex margegauche releve">
+                                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                                {% if realisation.imagelangage1 is not null %}
+                                                    <img src="{{ asset('img/realisations/' ~ realisation.imagelangage1)}}" height="52" width="52" alt="Icone" class="imglangage">
+                                                {% endif %}
+                                            </div>
+                                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                                {% if realisation.imagelangage2 is not null %}
+                                                    <img src="{{ asset('img/realisations/' ~ realisation.imagelangage2)}}" height="52" width="52" alt="Icone" class="imglangage">
+                                                {% endif %}
+                                            </div>
+                                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                                {% if realisation.imagelangage3 is not null %}
+                                                    <img src="{{ asset('img/realisations/' ~ realisation.imagelangage3)}}" height="52" width="52" alt="Icone" class="imglangage">
+                                                {% endif %}
+                                            </div>
+                                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                                {% if realisation.imagelangage4 is not null %}
+                                                    <img src="{{ asset('img/realisations/' ~ realisation.imagelangage4)}}" height="52" width="52" alt="Icone" class="imglangage">
+                                                {% endif %}
+                                            </div>
+                                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                                {% if realisation.imagelangage5 is not null %}
+                                                    <img src="{{ asset('img/realisations/' ~ realisation.imagelangage5)}}" height="52" width="52" alt="Icone" class="imglangage">
+                                                {% endif %}
+                                            </div>
+                                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                                {% if realisation.imagelangage6 is not null %}
+                                                    <img src="{{ asset('img/realisations/' ~ realisation.imagelangage6)}}" height="52" width="52" alt="Icone" class="imglangage">
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex margegauche">
+                                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                                {% if realisation.imagelangage7 is not null %}
+                                                    <img src="{{ asset('img/realisations/' ~ realisation.imagelangage7)}}" height="52" width="52" alt="Icone" class="imglangage">
+                                                {% endif %}
+                                            </div>
+                                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                                {% if realisation.imagelangage8 is not null %}
+                                                    <img src="{{ asset('img/realisations/' ~ realisation.imagelangage8)}}" height="52" width="52" alt="Icone" class="imglangage">
+                                                {% endif %}
+                                            </div>
+                                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                                {% if realisation.imagelangage9 is not null %}
+                                                    <img src="{{ asset('img/realisations/' ~ realisation.imagelangage9)}}" height="52" width="52" alt="Icone" class="imglangage">
+                                                {% endif %}
+                                            </div>
+                                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                                {% if realisation.imagelangage10 is not null %}
+                                                    <img src="{{ asset('img/realisations/' ~ realisation.imagelangage10)}}" height="52" width="52" alt="Icone" class="imglangage">
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <a href="{{ path('realisation_detail', {'id' : realisation.id}) }}"><button type="button" class="deroule deroulepetit">Plus de détails sur ce projet!</button></a>
+                                    </p>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 grandemargebas pad">
+                        <button type="button" class="collapsible redu">
+                            <p>Pour voir l'ensemble de mes projets avec possibilités de tri, <a href="{{ path ('realisation_liste_date_creadesc')}}">cliquez ici</a></p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tuile 5 -->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+
+            <!--Visible -->
+            <button type="button" class="collapsible">
+                <div class="d-flex annuldflexdeb">
+                    <div class="annuldflexdeb d-flex">
+                        <div>
+                            <img src="{{ asset("img/ideesprojets.png") }}" height="100" width="100" class="tourne" alt="Futurs projets?">
+                        </div>
+                        <div>
+                            <h3>Des futurs projets?</h3>
+                            <h3><img src="{{ asset("img/fleche2.png") }}" height="20" width="25" alt="Flèche"></h3>
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Contenu caché -->
+            <div class="contenta">
+                <p>Ancien animateur jeunesse, je suis sociable, de nature joyeuse et j'aime jouer. Mes futurs projets personnels tendent à se diriger en ce sens.</p>
+                <p>J'aimerais réaliser une application de lecture de notes de musique à vue sous forme de jeu où il faut cliquer sur la note correspondante. Système de temps, score, différentes difficultés. Une boutique e-commerce pour de la vente de bijoux ainsi qu'une refonte de ce portfolio sont également dans mes projets.</p>
+                <p>Je souhaiterais également, sur du plus long terme, participer à la création d'un jeu de type RTS, un de gestion/simulation et un de type JRPG.</p>
+            </div>
+        </div>
+
+        <!-- Tuile 6 -->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+
+            <!--Visible -->
+            <button type="button" class="collapsible">
+                <div class="d-flex annuldflexdeb">
+                    <div class="annuldflexdeb d-flex">
+                        <div>
+                            <img src="{{ asset("img/meconnaitreplus.png") }}" height="100" width="100" class="tourne" alt="Me connaître plus?">
+                        </div>
+                        <div>
+                            <h3>Plus me connaître?</h3>
+                            <h3><img src="{{ asset("img/fleche2.png") }}" height="20" width="25" alt="Flèche"></h3>
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Contenu caché -->
+            <div class="contenta">
+                <p>Passionné d'informatique, allant du code pur et dur à un petit FPS pour se détendre, en passant par tout ce qui est connecté ou encore comment sont liées toutes ces technologies que nous utilisons au quotidien, j'aime apprendre et découvrir, me tenir informé des dernières avancées est mon quotidien.</p>
+                <p>Pendant mes heures, je prends soin de ma petite famille, visites et loisirs, jeux, apprentissage de la vie.</p>
+                <p>J'aime également les jeux vidéos, et la musique. Je joue surtout de la guitare et je me suis lancé depuis peu dans l'apprentissage du piano. J'arrive à sortir quelques notes sur d'autres instruments. Rien de mieux que d'être passionné pour progresser, apprendre et réussir ce que l'on entreprend.</p>
+                <p>J'ai une grande faculté d'adaptation, le changement ou l'inconnu est pour moi stimulant. Je peux cependant être parfois obstiné, et m'accrocher jusqu'à comprendre et dépasser les difficultés.</p>
+                <p>J'aime travailler en équipe, c'est toujours enrichissant, j'apprécie apprendre de ceux qui ont plus d'expérience puis redonner ce savoir, voir apporter mon petit bagage en retour.</p>
+            </div>
+        </div>
+
+        <!-- Remonte page -->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <button type="button" id="remontepage" class="deroule">Remonter en haut de la page</button>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block title %}Guillaume GEORGES - Développeur Web | Portfolio - Accueil{% endblock %}

@@ -1,0 +1,402 @@
+{%  extends 'gabarit.html.twig' %}
+
+{%  block meta %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176748190-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176748190-1');
+    </script>
+
+    <!-- Meta -->
+    <meta name="description" content="Visualisez mon Curriculum Vitae : mes projets informatiques, mes formations, mes loisirs...">
+
+{% endblock %}
+
+{% block main %}
+
+    <!-- Titre page-->
+    <h2>Curriculum Vitae</h2>
+
+    <!-- Bloc tuiles et contenu -->
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap pad">
+        <!--CV caché-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 grandemargebas pad">
+            <button type="button" class="collapsible reduitbouton"><h3>Original du CV</h3></button>
+            <div class="contenta">
+                <img src="{{ asset("img/cv.jpg") }}" width="auto" alt="CV" class="cv img-fluid">
+            </div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 pad">
+        </div>
+
+        <!-- Tuile 1 -->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+
+            <!--Visible -->
+            <button type="button" class="collapsible">
+                <div class="d-flex annuldflexdeb">
+                    <div class="annuldflexdeb d-flex">
+                        <div>
+                            <img src="{{ asset("img/coordonnees.png") }}" height="100" width="100" alt="Coordonnées" class="tourne">
+                        </div>
+                        <div>
+                            <h3>Coordonnées</h3>
+                            <h3><img src="{{ asset("img/fleche2.png") }}" height="20" width="25" alt="Flèche"></h3>
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Contenu caché -->
+            <div class="contenta">
+                <p>
+                    <div class="d-flex">
+                        <div>
+                            <img src="{{ asset("img/gg.jpg") }}" width="110" alt="Ma photo" class="moi">
+                        </div>
+                        <div class="textcentrer ada textepetit">
+                            <p><img src="{{ asset("img/localisationbl.png") }}" width="35" alt="icone" class="imgcv">Manche (50)</p>
+                            <p><img src="{{ asset("img/cakebl.png") }}" width="35" alt="icone" class="imgcv">31 Ans</p>
+                            <p><img src="{{ asset("img/mailbl.png") }}" width="35" alt="icone" class="imgcv">g.guillaume7[at]laposte.net</p>
+                            <p><img src="{{ asset("img/smartphonebl.png") }}" width="35" alt="icone" class="imgcv">07 50 89 14 66</p>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </div>
+
+        <!-- Tuile 2 -->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+
+            <!--Visible -->
+            <button type="button" class="collapsible">
+                <div class="d-flex annuldflexdeb">
+                    <div class="annuldflexdeb d-flex">
+                        <div>
+                            <img src="{{ asset("img/meconnaitreplus.png") }}" height="100" width="100" alt="Me connaître plus" class="tourne">
+                        </div>
+                        <div>
+                            <h3>Personnalité</h3>
+                            <h3><img src="{{ asset("img/fleche2.png") }}" height="20" width="25" alt="Flèche"></h3>
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Contenu caché -->
+            <div class="contenta">
+                <p>
+                    <div class="d-flex">
+                        <div class="textcentrer">
+                            <p><span class="gras">Résolution de problèmes</span> : J'aime me creuser la tête afin de trouver des solutions à tous les problèmes rencontrés.</p>
+                            <br>
+                            <p><span class="gras">Adaptable</span> : J'ai une très grande capacité à m'adapter, au changement, à l'inconnu, à de nouveaux projets.</p>
+                            <br>
+                            <p><span class="gras">Consciencieux</span> : Je fais toujours du mieux que je peux, en essayant au maximum de respecter les bonnes pratiques, d'avoir un code propre et commenté.</p>
+                            <br>
+                            <p><span class="gras">Autonome</span> : Je cherche d'abord les réponses par moi-même avec mes connaissances, en recherchant sur les documentations, les forums, et si vraiment je ne trouve pas, je n'hésite pas à poser des questions.</p>
+                            <br>
+                            <p><span class="gras">Curieux</span> : J'aime découvrir et comprendre. La veille technologique est pour moi naturel.</p>
+                            <br>
+                            <p><span class="gras">Esprit d'équipe</span> : J'aime apprendre des autres, redonner ce savoir, communiquer au maximum sur les difficultés et aussi sur tout ce qui est positif.</p>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </div>
+
+        <!-- Tuile 3 -->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+
+            <!--Visible -->
+            <button type="button" class="collapsible">
+                <div class="d-flex annuldflexdeb">
+                    <div class="annuldflexdeb d-flex">
+                        <div>
+                            <img src="{{ asset("img/divers.png") }}" height="100" width="100" alt="Divers" class="tourne">
+                        </div>
+                        <div>
+                            <h3>Divers</h3>
+                            <h3><img src="{{ asset("img/fleche2.png") }}" height="20" width="25" alt="Flèche"></h3>
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Contenu caché -->
+            <div class="contenta">
+                <p>
+                    <p>Permis B de conduire (07/2012)</p>
+                    <p>Véhicule personnel</p>
+                    <p>Anglais (niveau B2)</p>
+                    <br>
+                    <div class="petitemargebas"></div>
+                    <br>
+                    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div>
+                            <img src="{{ asset("img/laptopb.png") }}" width="56" alt="Icone" class="iconecv">
+                            <p>Veille technologique, Développement, Hardware, Software</p>
+                        </div>
+                        <br>
+                        <div class="petitemargebas"></div>
+                        <br>
+                        <div>
+                            <img src="{{ asset("img/gamepadb.png") }}" width="56" alt="Icone" class="iconecv">
+                            <p>FPS : Payday 2, Killing Floor, Doom / RPG : Final Fantasy (saga) / RTS : AOE</p>
+                        </div>
+                        <br>
+                        <div class="petitemargebas"></div>
+                        <br>
+                        <div>
+                            <img src="{{ asset("img/guitarb.png") }}" width="56" alt="Icone" class="iconecv">
+                            <p>Guitare, Basse, Piano, Mandoline, Violon, Tin whistle, Guimbarde</p>
+                        </div>
+                        <br>
+                        <div class="petitemargebas"></div>
+                        <br>
+                        <div>
+                            <img src="{{ asset("img/globeb.png") }}" width="56" alt="Icone" class="iconecv">
+                            <p>Grèce, Suède, Espagne, Irlande, Écosse, Angleterre, Allemagne, Belgique, Pays-bas</p>
+                        </div>
+                        <br>
+                        <div class="petitemargebas"></div>
+                        <br>
+                        <div>
+                            <img src="{{ asset("img/swimb.png") }}" width="56" alt="Icone" class="iconecv">
+                            <p>Natation, Tennis de table, Ski</p>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </div>
+
+        <!-- Tuile 4 -->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+
+            <!--Visible -->
+            <button type="button" class="collapsible">
+                <div class="d-flex annuldflexdeb">
+                    <div class="annuldflexdeb d-flex">
+                        <div>
+                            <img src="{{ asset("img/projetsinformatiques.png") }}" height="100" width="100" alt="Projets informatiques" class="tourne">
+                        </div>
+                        <div>
+                            <h3>Projets informatiques</h3>
+                            <h3><img src="{{ asset("img/fleche2.png") }}" height="20" width="25" alt="Flèche"></h3>
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Contenu caché -->
+            <div class="contenta">
+                <p>
+                    <div class="d-flex">
+                        <div class="textcentrer">
+                            <p><span class="gras">Portfolio v2 (2020)</span> : Refonte complète de mon portfolio.</p>
+                            <p>Maquettage, préparation, développement et mise en ligne de l'application. Utilisation des dernières versions, SEO, responsive design, sécurité, bonnes pratiques, MVC.</p>
+                            <p>Projet personnel (50)</p>
+                            <br>
+                            <div class="petitemargebas"></div>
+                            <br>
+                            <p><span class="gras">Noob2Pro (2020)</span> : Landing page d'un réseau social e-sport.</p>
+                            <p>Conception, maquettage, préparation et développement en fonction de besoins client. Formulaire d'inscription en plusieurs étapes avec récupération de données, connexion, contact, composants d'accès aux données. Respect des délais. Méthodologie SCRUM.</p>
+                            <p>Société POU-VICH Yannis (50 - 2 mois - Stage)</p>
+                            <br>
+                            <div class="petitemargebas"></div>
+                            <br>
+                            <p><span class="gras">Sortir.com (2020)</span> : Application de gestion d'événements.</p>
+                            <p>Préparation à partir de documents et développement. Suivi quotidien, présentation finale de l'application. Gestion de l'inscription, connexion, ajout et affichage de sorties avec possibilités de tri (requêtes DQL).</p>
+                            <p>ENI École Informatique (50 - 2 semaines)</p>
+                            <br>
+                            <div class="petitemargebas"></div>
+                            <br>
+                            <p><span class="gras">Portfolio v1 (2020)</span> : Présentation de mes réalisations, CV en ligne.</p>
+                            <p>Conception, maquettage, préparation, développement et mise en ligne. Respect des bonnes pratiques, sécurité, MVC, contact, espace membres, tri et affichage des réalisations et des recommandations.</p>
+                            <p>Projet personnel (50)</p>
+                            <br>
+                            <div class="petitemargebas"></div>
+                            <br>
+                            <p><span class="gras">ENI Enchères (2020)</span> : Application de gestion d'enchères.</p>
+                            <p>Inscription, connexion, composants d'accès aux données, MVC.</p>
+                            <p>ENI École Informatique (50 - 2 semaines)</p>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </div>
+
+        <!-- Tuile 5 -->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+
+            <!--Visible -->
+            <button type="button" class="collapsible">
+                <div class="d-flex annuldflexdeb">
+                    <div class="annuldflexdeb d-flex">
+                        <div>
+                            <img src="{{ asset("img/formations.png") }}" height="100" width="100" class="tourne" alt="Formations">
+                        </div>
+                        <div>
+                            <h3>Formations</h3>
+                            <h3><img src="{{ asset("img/fleche2.png") }}" height="20" width="25" alt="Flèche"></h3>
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Contenu caché -->
+            <div class="contenta">
+                <p>
+                    <div class="d-flex">
+                        <div class="textcentrer">
+                            <p><span class="gras">2020-2022 OpenClassrooms (50) :</span> Concepteur Développeur d'Applications (RNCP niveau 6 - Bac +3/4) - 10 projets.</p>
+                            <br>
+                            <div class="petitemargebas"></div>
+                            <br>
+                            <p><span class="gras">2019-2020 ENI École Informatique (50) :</span> Développeur Web et Web Mobile (RNCP niveau 5 - Bac +2) - 2 projets.</p>
+                            <br>
+                            <div class="petitemargebas"></div>
+                            <br>
+                            <p><span class="gras">2011 La croix rouge (21) :</span> PSC1/First Aid - Formation aux premiers secours.</p>
+                            <br>
+                            <div class="petitemargebas"></div>
+                            <br>
+                            <p><span class="gras">2008-2010 IFAC/UFCV (77/64) :</span> Brevet d'Aptitude aux Fonctions d'Animateur.</p>
+                            <br>
+                            <div class="petitemargebas"></div>
+                            <br>
+                            <p><span class="gras">2007 CFA Trappes (78) :</span> CAP Peintre Applicateur de Revêtement (niveau).</p>
+                            <br>
+                            <div class="petitemargebas"></div>
+                            <br>
+                            <p><span class="gras">2006 Lycée Saint-François d'Assise (78) :</span> Terminale STI Électrotechnique (niveau).</p>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </div>
+
+        <!-- Tuile 6 -->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+
+            <!--Visible -->
+            <button type="button" class="collapsible">
+                <div class="d-flex annuldflexdeb">
+                    <div class="annuldflexdeb d-flex">
+                        <div>
+                            <img src="{{ asset("img/professionnellement.png") }}" height="100" width="100" class="tourne" alt="Professionnellement">
+                        </div>
+                        <div>
+                            <h3>Expériences professionnelles</h3>
+                            <h3><img src="{{ asset("img/fleche2.png") }}" height="20" width="25" alt="Flèche"></h3>
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Contenu caché -->
+            <div class="contenta">
+                <p>
+                    <div class="d-flex">
+                        <div class="textcentrer">
+                            <p><span class="gras">2020 POU-VICH Yannis (Saint-Vaast-la-Hougue 50) :</span> <b>Développeur Web</b>.</p>
+                            <br>
+                            <p>Stage effectué au sein d'une startup de 6 salariés.</p>
+                            <br>
+                            <p><b>Landing page d'un réseau social e-sport :</b> Noob2Pro.</p>
+                            <p>(Symfony 5, PHP, Bootstrap, SCSS, HTML, MySQL, Adobe XD, Git, Webpack, Yarn, NPM)</p>
+                            <p><span class="gras">-></span>Rédaction de 20 descriptions textuelles des fonctionnalités</p>
+                            <p><span class="gras">-></span>Représentation de 10 diagrammes de flux et d’activité</p>
+                            <p><span class="gras">-></span>Réalisation de 50 maquettes avec prototypage</p>
+                            <p><span class="gras">-></span>Création des formulaires de Contact et de Connexion</p>
+                            <p><span class="gras">-></span>Réunion SCRUM avec sprints chaque matin</p>
+                            <p><span class="gras">-></span>Design Responsive (>320px)</p>
+                            <p><span class="gras">-></span>Réalisation d’une page d’Accueil</p>
+                            <p><span class="gras">-></span>Inscription en plusieurs étapes réussie</p>
+                            <p><span class="gras">-></span>Développement en couches (MVC)</p>
+                            <p><span class="gras">-></span>5 Présentations de l’application</p>
+                            <p><span class="gras">Mes initiatives : Proposition de noms pour le projet puis de fonctionnalités supplémentaires / Version mobile</span></p>
+                            <br>
+                            <div class="petitemargebas"></div>
+                            <br>
+                            <p><span class="gras">2018-2019 Espace culturel E.Leclerc (Querqueville 50) :</span> <b>Employé commercial</b>.</p>
+                            <br>
+                            <p>Poste occupé au rayon informatique d'une entreprise de 350 salariés.</p>
+                            <br>
+                            <p><b>Relation client :</b></p>
+                            <p><span class="gras">-></span>Conseil avant et après vente</p>
+                            <p><span class="gras">-></span>Vente de produits (10/jour)</p>
+                            <p><span class="gras">-></span>Dépannage de Smartphones / PC</p>
+                            <p><span class="gras">-></span>Démonstration de produits</p>
+                            <br>
+                            <p><b>Gestion :</b></p>
+                            <p><span class="gras">-></span>Facturation des clients</p>
+                            <p><span class="gras">-></span>Gestion des prix / Alignement sur concurrents</p>
+                            <p><span class="gras">-></span>Gestion des stocks (12 commandes en téléphonie/mois)</p>
+                            <p><span class="gras">-></span>Mise en rayon des produits (Facing)</p>
+                            <p><span class="gras">Mes initiatives : Réalisation de visuels pour les ODR en cours ou à venir / Veille informatique / Réalisation de tableaux récapitulatifs des spécificités techniques des produits (PC, Smartphones, TV)</span></p>
+                            <br>
+                            <div class="petitemargebas"></div>
+                            <br>
+                            <p><span class="gras">2012-2013 Action Cameras (Londres W4 5PY) :</span> <b>Service client français et anglais</b>.</p>
+                            <br>
+                            <p>Poste occupé dans une startup multiculturelle de 20 salariés.</p>
+                            <br>
+                            <p><b>Relation client :</b></p>
+                            <p><span class="gras">-></span>Conseil avant et après vente</p>
+                            <p><span class="gras">-></span>Finalisation de vente (6/jour)</p>
+                            <p><span class="gras">-></span>Réparation/dépannage de caméras</p>
+                            <p><span class="gras">-></span>Démonstration de produits</p>
+                            <br>
+                            <p><b>Gestion :</b></p>
+                            <p><span class="gras">-></span>Traduction du site anglais en français et refonte du contenu</p>
+                            <p><span class="gras">-></span>Validation des ventes, vérifications de sécurité</p>
+                            <p><span class="gras">-></span>Gestion des livraisons (entrepôt et transporteurs)</p>
+                            <p><span class="gras">Mes initiatives : Participation au salon "Ski and snowboard show" / Configuration des imprimantes WIFI / Réalisation de tableaux de conversions (stockage Go en h d’enregistrements) / Réalisation de tableaux récapitulatifs des caractéristiques techniques des produits en vente</span></p>
+                            <br>
+                            <div class="petitemargebas"></div>
+                            <br>
+                            <p><span class="gras">2008-2017 Villes de Montigny le Bretonneux, Paris, Strasbourg, Illkirch-Graffenstaden, Dijon (78, 75, 67, 67, 21) :</span> <b>Adjoint territorial d'animation</b>.</p>
+                            <br>
+                            <p><span class="gras">Mes initiatives : Sensibilisations (mini spectacles animateurs) / Activités sur longues périodes avec tournoi ou spectacle / Activités improvisées sur temps libre (Chant, Guitare, Jeux sportifs)</span></p>
+                            <br>
+                            <div class="petitemargebas"></div>
+                            <br>
+                            <p><span class="gras">2007-2012 Les salaisons dijonnaises, CCL, Kuene & Nagel (21, 91, 78) :</span> <b>Préparateur de commandes, Magasinier, Manutentionnaire</b>.</p>
+                            <br>
+                            <p><span class="gras">Mes initiatives : Modification des procédures permettant d’optimiser le rendement</span></p>
+                            <br>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </div>
+
+        <!--Remonte page-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <button type="button" id="remontepage" class="deroule">Remonter en haut de la page</button>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block title %}Guillaume GEORGES - Développeur Web | Portfolio - Curriculum Vitae{% endblock %}

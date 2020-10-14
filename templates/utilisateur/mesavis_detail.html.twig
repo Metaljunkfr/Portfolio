@@ -1,0 +1,20 @@
+{#{% extends ('gabarit.html.twig') %}
+
+{% block main %}
+    <h2>Détail de mon avis</h2>
+
+    <div><p>{{ utilisateur.pseudo }}</p></div>
+
+    {% for recommandation in utilisateur.recommandations %}
+        <div class="recommandation">
+            <p>{{ recommandation.titre }}</p>
+            <p>{{ recommandation.description }}</p>
+            <p>{{ recommandation.dateCreation|date('d/m/Y') }} à {{ recommandation.dateCreation|date('H:i:s')}}</p>
+        </div>
+    {% endfor %}
+
+    <a href="{{ path ('mesavis') }}"><div>Retour à mes avis</div></a>
+{% endblock %}
+
+{% block title %}Détail! | {{ parent() }}{% endblock %}
+#}

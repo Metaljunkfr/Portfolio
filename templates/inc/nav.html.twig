@@ -1,0 +1,43 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid d-flex">
+        <!--Logo-->
+        <div class="d-flex decalegauche">
+            <div><a href="{{ path ('accueil')}}"><img src="{{ asset("img/logo.png") }}" height="75" width="75" class="tourne" alt="Logo"></a></div>
+            <div class="decale"><a href="{{ path ('accueil')}}"><h1>Guillaume GEORGES</h1></a></div>
+            <!--Bouton menu lorsqu'écran plus petit qu'une certaine résolution-->
+        </div>
+        <button class="navbar-toggler tourne" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--Menu / menu réduit-->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto menuespace">
+                <li><a href="{{ path ('accueil')}}">Accueil</a></li>
+                <li><a href="{{ path ('realisation_liste_date_creadesc')}}">Réalisations</a></li>
+                <li><a href="{{ path ('curriculumvitae')}}">Mon CV</a></li>
+                <li><a href="{{ path ('recommandation_liste_date_recent')}}">Recommandations</a></li>
+                <li><a href="{{ path ('contact')}}">Me contacter</a></li>
+            </ul>
+            <ul class="navbar-nav ml-auto logs">
+                <!--Affichage selon rôle-->
+                {% if is_granted("ROLE_USER") %}
+                    <li><a href="{{ path('votreprofil')}}" class="lien petit">Modifier profil</a></li>
+                    <li class="cache">|</li>
+                    <li><a href="{{ path('recommandation_ajouter') }}" class="lien petit">Ajout recommandation</a></li>
+                    <li class="cache">|</li>
+                    <li><a href="{{ path('deconnexion')}}" class="lien petit">Déconnexion</a></li>
+                {% else %}
+                    <li><a href="{{ path('connexion')}}" class="lien petit">Se connecter</a></li>
+                    <li class="cache">|</li>
+                    <li><a href="{{ path('inscription')}}" class="lien petit">S'inscrire</a></li>
+                {% endif %}
+                {% if is_granted("ROLE_ADMIN") %}
+                    <li class="cache">|</li>
+                    <li><a href="{{ path('realisation_ajouter') }}" class="lien petit">Ajout réalisation</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+

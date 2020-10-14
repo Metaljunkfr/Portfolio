@@ -1,0 +1,110 @@
+{% extends 'gabarit.html.twig'%}
+
+{%  block meta %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176748190-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-176748190-1');
+    </script>
+
+    <!--Meta-->
+    <meta name="description" content="Créez votre compte pour débloquer certaines fonctionnalités du site.">
+
+{% endblock %}
+
+{% block main %}
+    <!--Titre page-->
+    <h2>Créez votre compte</h2>
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap pad" >
+        <!--Formulaire d'inscription avec les différents champs-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pad">
+            <div class="tuilec plushaut">
+                <p class="tailletitrereal">Formulaire d'inscription</p>
+                <div class="tuileb">
+                    <div class="connexion connectin margeauto col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        {{ form_start(inscriptionForm, {'attr': {'novalidate': 'novalidate'}}) }}
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/profil.png')}}" height="28" width="28" alt="Icone" class="imageform" ></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(inscriptionForm.nom) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/profil.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(inscriptionForm.prenom) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/profil.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(inscriptionForm.pseudo) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/mailb.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(inscriptionForm.email.first) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/mailb.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(inscriptionForm.email.second) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/motdepasseb.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(inscriptionForm.motdepasse.first) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/motdepasseb.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(inscriptionForm.motdepasse.second) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex annuldflex decboutongau col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class=" col-6 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><button class="valider" type="submit">Valider</button></div>
+                            <div class="col-6 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><button class="effacer" type="reset">Effacer</button></div>
+                        </div>
+                    </div>
+                    {{ form_end(inscriptionForm) }}
+                </div>
+                <!--Affichage des erreurs-->
+                <div class="erreurform">
+                    {{ form_errors(inscriptionForm.pseudo) }}
+                    {{ form_errors(inscriptionForm.nom) }}
+                    {{ form_errors(inscriptionForm.prenom) }}
+                    {{ form_errors(inscriptionForm.email.first) }}
+                    {{ form_errors(inscriptionForm.email.second) }}
+                    {{ form_errors(inscriptionForm.motdepasse.first) }}
+                    {{ form_errors(inscriptionForm.motdepasse.second) }}
+                </div>
+            </div>
+        </div>
+        <!--Si déjà un compte, lien pour se connecter-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 grandemargebas pad">
+            <p>Si vous avez déjà compte, cliquez <a href="{{ path('connexion')}}" class="lien">ici</a> pour vous connecter.</p>
+        </div>
+        <!--Remonte page-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad margebas">
+            <button type="button" id="remontepage" class="deroule">Remonter en haut de la page</button>
+        </div>
+    </div>
+
+{%  endblock %}
+
+{% block title %}Guillaume GEORGES - Développeur Web | Portfolio - Inscription{% endblock %}

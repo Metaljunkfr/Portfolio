@@ -1,0 +1,24 @@
+<!--Mise en page email ajout réalisation-->
+<div style="background-color:transparent; padding:5px;border-radius: 10px;">
+    <div style="background-color:#006080;border-radius: 10px;
+  border: 1px solid #464545;
+  text-align: left; padding:10px;">
+        <p style="color:white">Bonjour, votre réalisation depuis le site guillaumegeorges.fr vient d'être publiée!</p>
+        <br>
+        <p style="color:white">Voici le contenu de votre réalisation :</p>
+        <br>
+        <hr style="color:#464545">
+        <p style="color:white"><b style="text-decoration:underline">Auteur</b> : <span style="color:white">{{ realisation.auteur }}</span></p>
+        <p style="color:white"><b style="text-decoration:underline">Titre</b> : <span style="color:white">{{ realisation.titre }}</span></p>
+        <p style="color:white"><b style="text-decoration:underline">Résumé</b> : <span style="color:white">{{ realisation.resume }}</span></p>
+        <p style="color:white"><b style="text-decoration:underline">Description</b> : <span style="color:white">{{ realisation.description }}</span></p>
+        <hr style="color:#464545">
+        <br>
+        <p style="color:white">Vous pouvez la visualiser sur le site.</p>
+        <br>
+        <p style="color:white">Bien cordialement,</p>
+        <p style="color:white">Guillaume GEORGES</p>
+        <p style="color:white">07 50 89 14 66</p>
+        <a href="https://www.guillaumegeorges.fr"><img src="{{ email.image('@images/logo.png') }}" height="100px" width="100px" alt="Logo" title="GG"></a>
+    </div>
+</div>

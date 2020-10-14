@@ -1,0 +1,25 @@
+<!--Mise en page email contact-->
+<div style="background-color:transparent; padding:5px;border-radius: 10px;">
+        <div style="background-color:#006080;border-radius: 10px;
+  border: 1px solid #464545;
+  text-align: left; padding:10px;">
+                <p style="color:white">Bonjour, votre demande depuis le site guillaumegeorges.fr a bien été envoyée!</p>
+                <br>
+                <p style="color:white">Voici le contenu de votre message :</p>
+                <br>
+                <hr style="color:#464545">
+                <p style="color:white"><b style="text-decoration:underline">Nom</b> : <span style="color:white">{{ contact.nom }}</span></p>
+                <p style="color:white"><b style="text-decoration:underline">Prénom</b> : <span style="color:white">{{ contact.prenom }}</span></p>
+                <p style="color:white"><b style="text-decoration:underline">Email</b> : <span style="color:white">{{ contact.email }}</span></p>
+                <p style="color:white"><b style="text-decoration:underline">Objet</b> : <span style="color:white">{{ contact.objet }}</span></p>
+                <p style="color:white"><b style="text-decoration:underline">Message</b> : <span style="color:white">{{ contact.message }}</span></p>
+                <hr style="color:#464545">
+                <br>
+                <p style="color:white">Vous recevrez une réponse sous 24/48h.</p>
+                <br>
+                <p style="color:white">Bien cordialement,</p>
+                <p style="color:white">Guillaume GEORGES</p>
+                <p style="color:white">07 50 89 14 66</p>
+                <a href="https://www.guillaumegeorges.fr"><img src="{{ email.image('@images/logo.png') }}" height="100px" width="100px" alt="Logo" title="GG"></a>
+        </div>
+</div>

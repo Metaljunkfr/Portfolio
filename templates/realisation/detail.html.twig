@@ -1,0 +1,110 @@
+{% extends ('gabarit.html.twig') %}
+
+{%  block meta %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176748190-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-176748190-1');
+    </script>
+
+    <!--Meta-->
+    <meta name="description" content="Découvrez plus d'informations sur la réalisation, le processus, les langages utilisés.">
+
+{% endblock %}
+
+{% block main %}
+    <!--Titre page-->
+    <h2 class="exception">Détail de la réalisation</h2>
+
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap pad">
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 margebas pad">
+            <div class="tuilebb">
+                <p>{{ realisation.categorieRealisation.nom }} - {{ realisation.titre }} - {{ realisation.dateProjet|date('d/m/Y') }} </p>
+            </div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <!--2 blocs puis un gros bloc-->
+        <!--Premier bloc affichage rendu responsive-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 pad">
+            <div class="tuilec grossit">
+                <div>
+                    <p class="tailletitrereal">Rendu responsive de l'application</p>
+                    <div class="imgcenter">
+                        <img class="limiteimage" src="{{ asset ('img/realisations/' ~ realisation.imagemobile) }}" height="auto" width="100%" alt="Rendu responsive : {{ realisation.titre }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Deuxième bloc affichage extrait de code-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 pad">
+            <div class="tuilec grossit">
+                <div>
+                    <p class="tailletitrereal">Extrait de code</p>
+                    <div class="imgcenter">
+                        <img class="limiteimage" src="{{ asset ('img/realisations/' ~ realisation.imagecode) }}" height="auto" width="100%" alt="Extrait de code : {{ realisation.titre }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Troisième bloc description-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pad">
+            <div class="tuiled">
+                <div>
+                    <p class="tailletitrereal grandemargebas">{{ realisation.titre }} - {{ realisation.dateProjet|date('d/m/Y') }} - ({{ realisation.categorieRealisation.nom }})</p>
+                    <div>
+                        <div class="descriptionrealisation"><p>{{ realisation.description|raw }}</p></div>
+                        <div><p>Publié le {{ realisation.dateCreation|date('d/m/Y') }}</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Retour-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 grandemargebas pad">
+            <a href="{{ path ('realisation_liste_date_creadesc') }}"><button type="button" class="deroule">Retour aux réalisations</button></a>
+        </div>
+        <!--Remonte page-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <button type="button" id="remontepage" class="deroule">Remonter en haut de la page</button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block title %}Guillaume GEORGES - Développeur Web | Portfolio - Détail de la réalisation{% endblock %}

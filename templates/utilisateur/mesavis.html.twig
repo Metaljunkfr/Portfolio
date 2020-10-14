@@ -1,0 +1,17 @@
+{#{% extends ('gabarit.html.twig') %}
+
+{% block main %}
+    <h2>Vos avis</h2>
+    <br>
+
+    {% for utilisateur in mesavis %}
+        <div class="utilisateur">
+            <a href="{{ path('mesavis_detail', {'id' : utilisateur.id}) }}">{{ loop.index }}: {{ utilisateur.pseudo }} - {{ utilisateur.recommandations|length }}</a>
+        </div>
+    {% endfor %}
+    <a href="{{ path ('recommandation_liste_date_recent')}}">Retour à la liste des recommandations</a>
+    <br>
+{% endblock %}
+
+{% block title %}Mes recommandations! | {{ parent() }}{% endblock %}
+#}

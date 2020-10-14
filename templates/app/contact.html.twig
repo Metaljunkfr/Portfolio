@@ -1,0 +1,226 @@
+{%  extends 'gabarit.html.twig' %}
+
+{%  block meta %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176748190-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176748190-1');
+    </script>
+
+    <!-- Meta -->
+    <meta name="description" content="Contactez-moi via le formulaire. Consultez des informations complémentaires à propos de moi.">
+
+{% endblock %}
+
+{% block main %}
+
+    <!-- Titre page-->
+    <h2>Contact</h2>
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap pad">
+        <!--2 blocs-->
+        <!--Bloc numéro 1 (formulaire)-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 pad">
+            <div class="tuilec plushaut divcontact">
+                <p class="tailletitrereal">Formulaire de contact</p>
+                <div class="tuileb">
+
+                    <!--Formulaire-->
+                    <div class="connexion margeauto col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        {{ form_start(contactForm, {'attr': {'novalidate': 'novalidate'}}) }}
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/profil.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(contactForm.nom) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/profil.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(contactForm.prenom) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/mailb.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(contactForm.email) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/pointinterb.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(contactForm.objet) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 minw"><img src="{{ asset('img/messageb.png')}}" height="28" width="28" alt="Icone" class="imageform"></div>
+                            <div class="col-10 col-xs-10 col-sm-10 col-md-9 col-lg-9 col-xl-9 widgetform">{{ form_widget(contactForm.message) }}</div>
+                            <div class="col-0 col-xs-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+                        </div>
+                        <div class="group d-flex annuldflex col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class=" col-6 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pad"><button class="valider" type="submit">Envoyer</button></div>
+                            <div class="col-6 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pad"><button class="effacer" type="reset">Effacer</button></div>
+                        </div>
+                    </div>
+                    {{ form_end(contactForm) }}
+                </div>
+                <!-- Affichage des erreurs-->
+                <div class="erreurform" >
+                    {{ form_errors(contactForm.nom) }}
+                    {{ form_errors(contactForm.prenom) }}
+                    {{ form_errors(contactForm.email) }}
+                    {{ form_errors(contactForm.objet) }}
+                    {{ form_errors(contactForm.message) }}
+                </div>
+            </div>
+        </div>
+
+        <!--Bloc numéro 2 (à propos)-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 pad">
+            <div class="tuilec ccont">
+                <div>
+                    <p class="tailletitrereal">À propos</p>
+                    <div class="imgcenter">
+                        <!-- Alignement des langages en 6 x 4-->
+                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex padapt">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>PHP</p>
+                                <img src="{{ asset('img/php.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>Java(EE)</p>
+                                <img src="{{ asset('img/java.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>Python</p>
+                                <img src="{{ asset('img/python.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>HTML</p>
+                                <img src="{{ asset('img/html.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>CSS</p>
+                                <img src="{{ asset('img/css.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>JavaScript</p>
+                                <img src="{{ asset('img/js.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                        </div>
+                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex padapt">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>SASS</p>
+                                <img src="{{ asset('img/sass.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>Symfony</p>
+                                <img src="{{ asset('img/symfony.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>Bootstrap</p>
+                                <img src="{{ asset('img/bootstrap.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>jQuery</p>
+                                <img src="{{ asset('img/jquery.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>Angular</p>
+                                <img src="{{ asset('img/angular.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>VueJS</p>
+                                <img src="{{ asset('img/vuejs.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                        </div>
+                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex padapt">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>MySQL</p>
+                                <img src="{{ asset('img/mysql.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>MSSQLS</p>
+                                <img src="{{ asset('img/mssqlserver.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>PLSQL</p>
+                                <img src="{{ asset('img/pl-sql.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>Tomcat</p>
+                                <img src="{{ asset('img/tomcat.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>Git</p>
+                                <img src="{{ asset('img/git.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>AdobeXD</p>
+                                <img src="{{ asset('img/adobexd.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                        </div>
+                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex padapt">
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>Balsamiq</p>
+                                <img src="{{ asset('img/balsamiqmockup.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>Wordpress</p>
+                                <img src="{{ asset('img/wordpress.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>Webpack</p>
+                                <img src="{{ asset('img/webpack.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>NPM</p>
+                                <img src="{{ asset('img/npm.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>Yarn</p>
+                                <img src="{{ asset('img/yarn.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                            <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <p>UML</p>
+                                <img src="{{ asset('img/uml.png')}}" height="40" width="40" alt="Icone" class="imageform imglangage">
+                            </div>
+                        </div>
+                        <!-- Infos en plus-->
+                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex padapt imgadapt decalecontact">
+                            <p>Retrouvez moi</p>
+                            <a href="https://www.linkedin.com/in/guillaumegeorges" class="cadre" target="_blank"><img src="{{ asset('img/linkedin.png')}}" height="50" width="50" alt="Icone" class="imageform"></a>
+                            <a href="https://gitlab.com/Metaljunk" class="cadre" target="_blank"><img src="{{ asset('img/gitr.png')}}" height="50" width="50" alt="Icone" class="imageform"></a>
+                            <a href="https://stackoverflow.com/users/13133575/metaljk" class="cadre" target="_blank"><img src="{{ asset('img/stackoverflow.png')}}" height="50" width="50" alt="Icone" class="imageform"></a>
+                        </div>
+                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex padapt decalecontact alignegauche">
+                            <p>07 50 89 14 66 - g.guillaume7[at]laposte.net - Manche (50) - France </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Remonte page-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <div class="tuileb"></div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 pad">
+            <button type="button" id="remontepage" class="deroule">Remonter en haut de la page</button>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block title %}Guillaume GEORGES - Développeur Web | Portfolio - Contact{% endblock %}
